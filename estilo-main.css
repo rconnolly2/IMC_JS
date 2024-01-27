@@ -1,0 +1,105 @@
+.seccion-izq {
+    display: inline-block;
+    background-color: blanchedalmond;
+    width: 40%;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center; /*Me centra mis a*/
+}
+
+.seccion-der {
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgb(225, 255, 181);
+    width: 59%;
+    height: 100vh;
+}
+
+.seccion-der h3 {
+    width: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: green;
+    color: white;
+}
+
+#calcula-tu-imc {
+    background-color: rgb(37, 82, 128);
+    color: white;
+    width: 700px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-resultado {
+    background-color: bisque;
+    width: 500px;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.486);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.texto-bmi {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap:wrap;
+}
+
+#output-imc {
+    text-align: center;
+}
+
+#resultado-peso {
+    text-align: center;
+    color: green;
+
+}
+
+.div-resultado img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seccion-izq table, th, td {
+    border:1px solid rgb(150, 150, 150);
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+table th{
+    background-color: #336699;
+}
+
+table tr:nth-child(odd) td {
+    background-color: #eeeeee;
+  }
+
+.tabla-historial th {
+    background-color: #336699;
+}
+
+.div-resultado table {
+    width: 100%;
+}
+
+.menu {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.info-peso {
+    margin-left: auto;
+    margin-right: auto;
+}

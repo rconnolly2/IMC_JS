@@ -4,17 +4,107 @@
     <meta charset="UTF-8">
     <title>Actividad indice de masa corporal LM</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilo-main.css">
 </head>
 
 <body>
-    <div class="menu">
-        <div class="menu-interior">
-           <p>Edad</p> <input type="text" id="peso"><p>edades 2 - 100</p><br><br>
-            <input type="text" id="nombre"><br><br>
-            <input type="text" id="apellido"><br><br>
-            <input type="text" id="altura"><br><br>
+    <header class="cabecera">
+        <h1>Fit or <span id="not">Not</span></h1>
+    </header>
+    <nav class="nav-menu">
+        <a class="opcion-menu" href="">¿Estas en forma?</a>
+        <a class="opcion-menu" href="">Planes nutricionales</a>
+        <a class="opcion-menu" href="">Contrata entrenador personal</a>
+    </nav>
+
+    <h1 id="calcula-tu-imc">Calcula tu indice de masa corporal</h1>
+    <div class="seccion-izq">
+        <input type="button" sistema="imperial" class="boton-sistema" onclick="CambioSistema(this)" value="Sistema imperial"> <input type="button" sistema="metrico" class="boton-sistema-click" onclick="CambioSistema(this)" value="Sistema métrico">
+        <div class="menu">
+            <div class="menu-interior">
+            <span>Edad</span><input type="number" id="peso"><span> edades: 2 - 120</span><br>
+            <span>Genero</span><input type="radio" name="genero"><span>Hombre</span><input type="radio" name="genero"><span>Mujer</span><br>
+            <span>Altura</span><input type="number" id="altura-input" placeholder="centímetros"><input type="number" id="pies-input" placeholder="pies"><input type="number" id="pulgadas-input" placeholder="pulgadas"><br>
+            <span>Peso</span><input type="number" id="peso-input" placeholder="kg"><input type="number" id="libras-input" placeholder="libras"><br><br>
+            
+            <a class="boton-calc" href="">Calcular &#9654;</a> <a class="boton-reset" href="">Reset</a>
+            </div>
+        </div>
+        <br>
+        <table class="info-peso">
+            <tr>
+                <th>Categoría</th>
+                <th>Rango porcentaje</th>
+            </tr>
+            <tr>
+                <td>Peso Bajo</td>
+                <td>Menor a 18.5%</td>
+            </tr>
+            <tr>
+                <td>Normal</td>
+                <td>18.5% - 24.9%</td>
+            </tr>
+            <tr>
+                <td>Sobrepeso</td>
+                <td>25% - 29.9%</td>
+            </tr>
+            <tr>
+                <td>Obesidad 1</td>
+                <td>30% - 34.9%</td>
+            </tr>
+            <tr>
+                <td>Obesidad 2</td>
+                <td>35% - 39.9%</td>
+            </tr>
+            <tr>
+                <td>Obesidad 3</td>
+                <td>40% - 49.9%</td>
+            </tr>
+            <tr>
+                <td>Obesidad 4</td>
+                <td>Mayor a 50%</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <div class="div-resultado">
+            <table class="tabla-historial">
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Edad</th>
+                    <th>Altura</th>
+                    <th>IMC</th>
+                    <th>Resultado</th>
+                </tr>
+                <tr>
+                    <td>Pepe</td>
+                    <td>bob</td>
+                    <td>coc</td>
+                    <td>ddd</td>
+                    <td>coc</td>
+                    <td>ddd</td>
+                </tr>
+            </table>
         </div>
     </div>
+
+    <div class="seccion-der">
+        <h3>Tu resultado</h3>
+
+        <div class="div-resultado">
+            <h4 id="output-imc">IMC=40.5</h4>
+            <p id="resultado-peso">(Peso normal)</p>
+            <img width="300px" src="https://cdn0.iconfinder.com/data/icons/fat-obese-overweight-woman-stick-figure/230/fat-obese-obesity-woman-19-512.png" alt="">
+        </div>
+        <br>
+        <p class="texto-bmi">
+            El Calculador del Índice de Masa Corporal (IMC) se puede utilizar para calcular el valor del IMC y el estado de peso correspondiente teniendo en cuenta la edad. Utiliza la pestaña "Unidades Métricas" para el Sistema Internacional de Unidades o la pestaña "Otras Unidades" para convertir las unidades a unidades estadounidenses o métricas. Ten en cuenta que el calculador también determina el Índice Ponderal además del IMC, ambos discutidos con detalle a continuación.
+        </p>
+    </div>
+    
+
 
     <script src="codigo.js"></script>
 </body>
