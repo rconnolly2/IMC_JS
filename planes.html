@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Planes nutricionales a medida</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="estilo-main.css">
+    <link rel="stylesheet" href="estilos-planes.css">
+</head>
+<body>
+    <header class="cabecera">
+        <h1>Fit or <span id="not">Not</span></h1>
+    </header>
+    <nav class="nav-menu">
+        <a class="opcion-menu" href="index.html">¿Estas en forma?</a>
+        <a class="opcion-menu" href="">Contrata entrenador personal</a>
+    </nav>
+
+    <h1 id="calcula-tu-imc">Crea un plan de alimentación a tu medida</h1>
+    <br><br>
+    <h1 id="calorias-maximas">Goal calories</h1>
+    <div id="div-barra">
+        <div id="barra"></div>
+    </div>
+    <h2 id="porcentaje-completo">20%</h2>
+    
+    <br>
+
+    <div class="buscador-comida">
+        <input class="buscador-input" id="buscador-comida" type="text" placeholder="Alimento deseado"><a class="boton-buscar-comida" onclick="BuscarComida()">Buscar alimento</a>
+        <br>
+        <p id="output-buscador">Hamburguesa 10g 23.8 kcal 1.2g grasas 1.8g carbohidratos 0g azucares 1.5g proteínas</p>
+        <span id="span-cant-añadir">Cantidad añadir (x10g) </span> <input min="1" id="cant-input" type="number"> <a class="añadir-comida" onclick="InsertarAlimentoList()">Añadir</a>
+        <br><br>
+
+        <h2>Lista valores nutricionales</h2>
+        <div class="lista-comida">
+            <table id="tabla-comida" style="overflow: hidden;">
+                <tr>
+                    <th>Nombre alimento</th>
+                    <th>Cantidad comida</th>
+                    <th>Calories</th>
+                    <th>Total grasas</th>
+                    <th>Carbohidratos</th>
+                    <th>Azucares</th>
+                    <th>Proteínas</th>
+                </tr>
+                
+            </table>
+        </div>
+
+    </div>
+    <br>
+
+
+
+    <script src="codigo-planes.js"></script>
+</body>
+</html>

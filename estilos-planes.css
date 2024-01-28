@@ -1,0 +1,107 @@
+#div-barra {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: grey;
+}
+  
+#barra {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+    
+}
+
+
+body {
+    background-color: #ebf4f5;
+    margin: 0;
+}
+
+.buscador-comida {
+    display: block;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    height: 500px;
+    padding: 50px;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.363);
+    border: 0px;
+    border-top: 40px;
+    border-color: #3aa7aa;
+    border-style: solid;
+    border-radius: 5px;
+}
+
+.buscador-input {
+    width: 400px;
+    font-size: larger;
+    border: 1px solid rgba(193, 193, 193, 0.742);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.boton-buscar-comida {
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    margin-left: 30px;
+}
+
+#output-buscador, #span-cant-añadir, .añadir-comida {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+#cant-input {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 50px;
+    font-size: 15px;
+}
+
+.añadir-comida {
+    background-color: #033a40;
+    padding: 6px;
+    color: white;
+    border-radius: 15px;
+}
+
+.buscador-comida h2 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.buscador-comida tr th {
+    background-color: #343a40;
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+}
+
+#tabla-comida {
+    display: block;
+    border-collapse: collapse;
+    width: 500px;
+    height: 300px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#tabla-comida td {
+    font-size: 10px;
+}
+
+.buscador-comida table td, th {
+    border: 0px solid #ffffff;
+    padding: 8px;
+    text-align: center;
+}
+
+#calorias-maximas, #porcentaje-completo {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
