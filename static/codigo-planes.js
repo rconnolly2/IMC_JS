@@ -92,7 +92,7 @@ function InsertarAlimentoList() {
         lista_alimentos.unshift({ // Añado alimento a lista alimentos * cantidad seleccionada
             name: ultimo_alimento_val["name"].charAt(0).toUpperCase()+ultimo_alimento_val["name"].slice(1),
             grams: 10*input_cant_añadir.value + "g",
-            calories: (ultimo_alimento_val["fat_total_g"]*10),
+            calories: Math.round(ultimo_alimento_val["calories"]*input_cant_añadir.value),
             fats: (ultimo_alimento_val["fat_total_g"] * input_cant_añadir.value).toFixed(1) + "g",
             carbohydrates: (ultimo_alimento_val["carbohydrates_total_g"] * input_cant_añadir.value).toFixed(2) + "g",
             sugars: (ultimo_alimento_val["sugar_g"] * input_cant_añadir.value).toFixed(1) + "g",
