@@ -23,32 +23,32 @@ var cal_actuales=1;
 
 
 function RespuestaPeticion(obj_xmlhttp) {
-    if (obj_xmlhttp.readyState === 4 && obj_xmlhttp.status === 200) {
-        // Analizar la respuesta JSON
+    if (obj_xmlhttp.readyState === 4 && obj_xmlhttp.status === 200) { // Respuesta correcta no hay errores
+        // Lo convierto a objeto js el json
         var respuesta = JSON.parse(obj_xmlhttp.responseText);
-        // Hacer algo con los datos de la respuesta
-        respuesta_peticion = respuesta; // aqui veo la rspuesta
+        // Lo guardo para que pueda acceder luego
+        respuesta_peticion = respuesta;
       }
 }
 
 function BuscarAlimentoAPI(str_comida) {
-    // Explicado abajo del todo como funciona: https://www.w3schools.com/js/js_ajax_http.asp
-    let xhr = new XMLHttpRequest() // creo obj xmlhttprequest
+    // Explicado todo como funciona: https://www.w3schools.com/js/js_ajax_http.asp
+    let obj_xhr = new XMLHttpRequest() // creo obj xmlhttprequest
 
-    // Definir la URL del punto de conexión de la API
+    // defino url de la api
     var apiUrl = 'https://api.calorieninjas.com/v1/nutrition?query='+"10g "+str_comida;
 
     // configuro solicitud, con mi key de la api, url, destino, método etc ...
-    xhr.open('GET', apiUrl, true);
-    xhr.setRequestHeader('X-Api-Key', "d3yFTyw0O0lGuDig0b67hg==M3K1zE4vbzA45zsi");
+    obj_xhr.open('GET', apiUrl, true);
+    obj_xhr.setRequestHeader('X-Api-Key', "d3yFTyw0O0lGuDig0b67hg==M3K1zE4vbzA45zsi");
 
-    // Configurar una función de devolución de llamada para manejar la respuesta
-    xhr.onreadystatechange = function () {
-        RespuestaPeticion(xhr);
+    // función de devolución de llamada para manejar la respuesta
+    obj_xhr.onreadystatechange = function () { // esto solo se ejecutara cuando tenga las respuesta similar
+        RespuestaPeticion(obj_xhr); // a threads en py
     }
 
-    // Enviar la solicitud
-    xhr.send();
+    // envió la solicitud
+    obj_xhr.send();
 }
 
 function BuscarComida() {
