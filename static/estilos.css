@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #ebf4f5;
 }
 
 .menu {
@@ -13,7 +14,7 @@ body {
     text-align: center;
     margin-right: auto;
     margin-left: auto;
-    background-color: bisque;
+    background-color: #eeeeee;
     width: 90%;
 }
 
