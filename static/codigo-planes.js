@@ -65,8 +65,6 @@ function BuscarComida() {
 
 function CambiarAlimento() {
     let output_buscador = document.getElementById("output-buscador");
-    let span_cant = document.getElementById("span-cant-añadir");
-    let boton_añadir_alim = document.getElementById("añadir-comida");
 
     // Si ha encontrado un alimento actualizar textos
     if (respuesta_peticion.items.length>=1) {

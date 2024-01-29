@@ -19,6 +19,13 @@ let peso_imperial = document.getElementById("libras-input");
 // Sexo
 let lista_radios = document.getElementsByName("genero");
 
+
+
+
+/**
+ * 
+ * Esta función cambia de sistema: imperial, métrico 
+ */
 function CambioSistema(obj_html) {
     let lista_elementos = document.querySelectorAll(".boton-sistema, .boton-sistema-click");
     // Sistema imperial:
@@ -32,6 +39,7 @@ function CambioSistema(obj_html) {
 
     tipo_sistema_seleccionado = obj_html.getAttribute("sistema"); // selecciono
 
+    // Si hago click e n un botón de sistema cambio de clase
     for (let i=0; i<=lista_elementos.length-1; i++) {
         if (lista_elementos[i].getAttribute("sistema")==tipo_sistema_seleccionado) {
             lista_elementos[i].classList.remove("boton-sistema");
@@ -90,6 +98,11 @@ function ImprimirResultado(imc, clasi_peso, sexo) {
     imagen_peso.src = `/img/${clasi_peso+sexo.toLowerCase()}.png`;
 }
 
+/**
+ * 
+ * Calcula IMC
+ * 
+ */
 function CalcularIMC(altura_total, peso_final) {
     let imc;
 
@@ -103,6 +116,10 @@ function CalcularIMC(altura_total, peso_final) {
 
 }
 
+/**
+ * 
+ * Clasifica IMC indice
+ */
 function ClasificarIMC(imc) {
     if (imc<18.5) {
         return 0;
@@ -121,6 +138,9 @@ function ClasificarIMC(imc) {
     }
 }
 
+/**
+ * Al hacer click al boton calcular filtrar y procesar
+ */
 function ClickCalcular() {
     // Datos en int para asegurarme que es un numero ...
     let edad_int = parseInt(edad.value);
