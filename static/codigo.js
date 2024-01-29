@@ -78,14 +78,24 @@ function ValidarDatos(obj_html) {
     }
 }
 
+/**
+ * Imprime el resultado cambiando el stickman según peso y genero, y también el texto
+ */
 function ImprimirResultado(imc, clasi_peso, sexo) {
     let output_imc = document.getElementById("output-imc");
     let resultado_peso = document.getElementById("resultado-peso");
     let imagen_peso = document.getElementById("imagen-peso");
+    let mensaje_mejora = ""; // Mensaje por defecto en caso clasi_peso=1 "normal"
+
+    if (clasi_peso>1) { // si clasificación de peso es mayor que 1 es mas que lo "normal"
+        mensaje_mejora="Tienes que perder peso" // msg tener que perder peso
+    } else if (clasi_peso<1) {
+        mensaje_mejora="Tienes que ganar peso" // msg tener que ganar peso
+    }
 
     // Cambio texto:
     output_imc.innerHTML=`IMC=${imc}`;
-    resultado_peso.innerHTML=`(${clasificacion_peso[clasi_peso]}) ¡Te he hecho un plan a medida!`;
+    resultado_peso.innerHTML=`(${clasificacion_peso[clasi_peso]}) ${mensaje_mejora} ¡Te he hecho un plan a medida!`;
 
     // Cambio color si es negativo o positivo:
     if (clasi_peso<1 || clasi_peso>1) {
@@ -99,9 +109,7 @@ function ImprimirResultado(imc, clasi_peso, sexo) {
 }
 
 /**
- * 
- * Calcula IMC
- * 
+ * Calcula IMC con formula para sistema imperial y métrico
  */
 function CalcularIMC(altura_total, peso_final) {
     let imc;
@@ -139,7 +147,7 @@ function ClasificarIMC(imc) {
 }
 
 /**
- * Al hacer click al boton calcular filtrar y procesar
+ * Al hacer click al boton calcular, filtrar y procesar
  */
 function ClickCalcular() {
     // Datos en int para asegurarme que es un numero ...
@@ -217,10 +225,16 @@ function ClickCalcular() {
     }
 }
 
+/**
+ * Crea objeto registro con los datos y los guarda en el local storage en formato json
+ */
 function GuardarDatos(fecha, hora, edad, genero, altura, peso, imc, resultado) {
     localStorage.setItem(localStorage.length.toString(), JSON.stringify(new Registro(fecha, hora, edad, genero, altura, peso, imc, clasificacion_peso[resultado])));
 }
 
+/**
+ * Imprime tabla con datos del localstorage
+ */
 function ImprimirDatosMemoria() {
     let tabla_html = document.getElementById("historial-registros");
 

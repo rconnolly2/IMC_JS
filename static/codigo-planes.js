@@ -1,4 +1,5 @@
 var respuesta_peticion;
+// diccionario por defecto al cargar pagina
 var ultimo_alimento_val = {
     calories: 23.8,
     carbohydrates_total_g: 1.8,
@@ -12,7 +13,7 @@ var ultimo_alimento_val = {
     serving_size_g: 10,
     sodium_mg: 35,
     sugar_g: 0
-}; // diccionario por defecto al cargar pagina
+};
 var lista_alimentos = [];
 // Utilizo formular BMR  con el ultimo registro dado para sacar el las calorías necesarias:
 // Si no hay registro lo dejo en 0 el max de calorías
@@ -20,7 +21,9 @@ var max_cal = (localStorage.length>=1) ? Math.round((JSON.parse(localStorage[loc
 var cal_actuales=1;
 
 
-
+/**
+ * Maneja la respuesta de la API de nutrición.
+ */
 function RespuestaPeticion(obj_xmlhttp) {
     if (obj_xmlhttp.readyState === 4 && obj_xmlhttp.status === 200) { // Respuesta correcta no hay errores
         // Lo convierto a objeto js el json
@@ -30,6 +33,9 @@ function RespuestaPeticion(obj_xmlhttp) {
       }
 }
 
+/**
+ * Hace una solicitud a la API de nutrición con el nombre del alimento
+ */
 function BuscarAlimentoAPI(str_comida) {
     // Explicado todo como funciona: https://www.w3schools.com/js/js_ajax_http.asp
     let obj_xhr = new XMLHttpRequest() // creo obj xmlhttprequest
@@ -50,6 +56,9 @@ function BuscarAlimentoAPI(str_comida) {
     obj_xhr.send();
 }
 
+/**
+ * Esta función coge el input del buscador y lo consulta en la api y guarda el resultado
+ */
 function BuscarComida() {
     let input_alimento = document.getElementById("buscador-comida");
 
@@ -63,6 +72,9 @@ function BuscarComida() {
 
 }
 
+/**
+ * Cambia el alimento por pantalla seleccionable
+ */
 function CambiarAlimento() {
     let output_buscador = document.getElementById("output-buscador");
 
@@ -73,6 +85,9 @@ function CambiarAlimento() {
     }
 }
 
+/**
+ * Actualiza tabla alimentos en pantalla utilizando lista_alimentos
+ */
 function ActualizarTabAlimentos() {
     let tabla = document.getElementById("tabla-comida");
 
@@ -82,6 +97,9 @@ function ActualizarTabAlimentos() {
     }
 }
 
+/**
+ * Insertar alimentos en lista lista_alimentos solo si no supera el máximo de calorías
+ */
 function InsertarAlimentoList() {
     let input_cant_añadir = document.getElementById("cant-input");
     console.log(ultimo_alimento_val["calories"]*input_cant_añadir.value)
@@ -107,6 +125,9 @@ function InsertarAlimentoList() {
     }
 }
 
+/**
+ * Actualiza barra de progreso
+ */
 function ActualizarProgreso() {
     let cal_maximas_h1 = document.getElementById("calorias-maximas");
     let porcentaje_h2 = document.getElementById("porcentaje-completo");
