@@ -15,6 +15,7 @@
         <a class="opcion-menu" href="">¿Estas en forma?</a>
         <a class="opcion-menu" href="planes.html">Planes nutricionales</a>
         <a class="opcion-menu" href="mailto:rconnollycifpfbmoll.eu">Contrata entrenador personal</a>
+        <a class="opcion-menu" onclick="ResetHistorial()">Reset historial</a>
     </nav>
 
     <h1 id="calcula-tu-imc">Calcula tu indice de masa corporal</h1>
@@ -27,7 +28,7 @@
             <span>Altura</span><input required type="number" id="altura-input" placeholder="centímetros" min="54" max="272" oninput="ValidarDatos(this)"><input type="number" id="pies-input" placeholder="pies" oninput="ValidarDatos(this)"><input type="number" id="pulgadas-input" placeholder="pulgadas" oninput="ValidarDatos(this)"><br>
             <span>Peso</span><input type="number" id="peso-input" placeholder="kg" min="27" max="635" oninput="ValidarDatos(this)"><input type="number" id="libras-input" placeholder="libras" min="59" max="1399" oninput="ValidarDatos(this)"><br><br>
             
-            <a class="boton-calc" onclick="ClickCalcular()">Calcular &#9654;</a> <a class="boton-reset" href="">Reset</a>
+            <a class="boton-calc" onclick="ClickCalcular()">Calcular &#9654;</a> <a class="boton-reset" onclick="ResetInput()">Reset</a>
             </div>
         </div>
         <br>

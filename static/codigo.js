@@ -85,7 +85,7 @@ function ImprimirResultado(imc, clasi_peso, sexo) {
 
     // Cambio texto:
     output_imc.innerHTML=`IMC=${imc}`;
-    resultado_peso.innerHTML=`(${clasificacion_peso[clasi_peso]})`;
+    resultado_peso.innerHTML=`(${clasificacion_peso[clasi_peso]}) ¡Te he hecho un plan a medida!`;
 
     // Cambio color si es negativo o positivo:
     if (clasi_peso<1 || clasi_peso>1) {
@@ -230,6 +230,29 @@ function ImprimirDatosMemoria() {
         obj_registro = JSON.parse(obj_registro); // convierto json a obj js
         // Append al inner html añadiendo datos
         tabla_html.innerHTML+=`<tr><td>${obj_registro.fecha}</td><td>${obj_registro.hora}</td><td>${obj_registro.edad}</td><td>${obj_registro.genero}</td><td>${obj_registro.altura}</td><td>${obj_registro.peso}</td><td>${obj_registro.imc}</td><td>${obj_registro.resultado}</td></tr>`
+    }
+}
+
+/**
+ * Hace reset de local storage
+ */
+function ResetHistorial() {
+    localStorage.clear(); // limpio memoria
+    ImprimirDatosMemoria(); // actualizo
+}
+
+/**
+ * Esta función resetea los valores del input
+ */
+function ResetInput() {
+    edad.value="";
+    if (tipo_sistema_seleccionado=="metrico") { // en caso de metrico
+        altura_metrico.value="";
+        peso_metrico.value="";
+    } else { // caso imperial
+        altura_imperial_pies.value="";
+        altura_imperial_pulgadas.value="";
+        peso_imperial.value="";
     }
 }
 
