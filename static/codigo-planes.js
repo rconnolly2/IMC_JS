@@ -1,4 +1,3 @@
-var i = 0;
 var respuesta_peticion;
 var ultimo_alimento_val = {
     calories: 23.8,
